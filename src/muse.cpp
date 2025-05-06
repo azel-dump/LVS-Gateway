@@ -98,7 +98,7 @@ void muse_advertising_task(void *pvParameters) {
 
 void muse_set_intensity(float intensity_percent) {
     // Convert the intensity percent to a value between 0 and 3
-    _intensity_value = static_cast<uint8_t>(std::floor(intensity_percent * 3.0f));
+    _intensity_value = static_cast<uint8_t>(std::floor(intensity_percent * 4.0f));
 
     if (intensity_percent < 0.0) {
         // Limit the minimum result value to 0
@@ -112,6 +112,8 @@ void muse_set_intensity(float intensity_percent) {
         // Limit the maximum result value to 3
         _intensity_value = 3;
     }
+
+    if (_intensity_value == 4) _intensity_value = 3;
 
     ESP_LOGI(
       TAG,
