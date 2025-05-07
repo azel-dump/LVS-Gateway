@@ -157,7 +157,7 @@ void lovense_init() {
     // Create a new characteristic for the lovense data
     pLovenseCharacteristic = pService->createCharacteristic(
         LOVENSE_CHARACTERISTIC_UUID,
-        NIMBLE_PROPERTY::READ | NIMBLE_PROPERTY::WRITE
+        NIMBLE_PROPERTY::READ | NIMBLE_PROPERTY::WRITE | NIMBLE_PROPERTY::WRITE_NR
     );
  
 
